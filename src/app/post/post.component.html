@@ -1,0 +1,36 @@
+<div class="card mb-2">
+  <img
+    class="card-img-top w-100"
+    src="{{ post.imagePath }}"
+    style="width: 100%"
+  />
+
+  <div class="card-body">
+    <h4 class="card-title">{{ post.title | uppercase }}</h4>
+    <p class="card-text">{{ post.description }}</p>
+    <p class="card-text">Author: {{ post.author }}</p>
+    <p class="card-text">Date: {{ post.dateTimeCreated | date }}</p>
+    <button
+      type="button"
+      (click)="likePost()"
+      class="btn btn-outline-primary btn-sm"
+    >
+      Like {{ post.numberOfLikes }}
+    </button>
+    <hr />
+    <button class="btn btn-success" (click)="onEdit()">Edit</button
+    ><button class="btn btn-danger ml-1" (click)="onDelete()">Delete</button>
+  </div>
+</div>
+
+<!-- <h2>{{ post.title | uppercase }}</h2>
+<p>{{ post.description }}</p>
+<img class="w-100" src="{{ post.imagePath }}" />
+<p>Author: {{ post.author }}</p>
+<p>Date: {{ post.dateTimeCreated | date }}</p>
+<p>Likes: {{ post.numberOfLikes }}</p>
+<button type="button" (click)="likePost()" class="btn btn-outline-primary btn-sm">Like {{ post.numberOfLikes }}</button>
+<br /><br />
+<button class="btn btn-success" (click)="onEdit()">Edit</button
+><button class="btn btn-danger ml-1" (click)="onDelete()">Delete</button>
+<hr /> -->
